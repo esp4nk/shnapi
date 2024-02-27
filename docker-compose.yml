@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  web:
+    build: .
+    ports:
+      - "5008:3000"
+    networks:
+      - traefik_default
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.shnexpress.rule=Host(``)
+      - traefik.http.routers.shnexpress.entrypoints=websecure
+      - traefik.http.routers.shnexpress.middlewares=cors-api@docker
+      - traefik.http.routers.shnexpress.tls.certresolver=letsencrypt
+      - traefik.http.routers.shnexpress.service=shnexpress
+      - traefik.http.services.shnexpress.loadbalancer.server.port=3000
+      - traefik.http.middlewares.cors-api.headers.customResponseHeaders.access-control-allow-origin="*"
+      - traefik.http.middlewares.cors-api.headers.customResponseHeaders.access-control-allow-credentials=true
+
+  
+
+
+networks:
+  traefik_default:
+    external: true
