@@ -14,7 +14,7 @@ services:
       - traefik.http.routers.shnexpress.tls.certresolver=letsencrypt
       - traefik.http.routers.shnexpress.service=shnexpress
       - traefik.http.services.shnexpress.loadbalancer.server.port=3000
-      - traefik.http.middlewares.cors-api.headers.customResponseHeaders.access-control-allow-origin="*"
+      - traefik.http.middlewares.cors-api.headers.customResponseHeaders.access-control-allow-origin=*
       - traefik.http.middlewares.cors-api.headers.customResponseHeaders.access-control-allow-credentials=true
 
   
