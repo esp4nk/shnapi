@@ -8,7 +8,7 @@ services:
       - traefik_default
     labels:
       - traefik.enable=true
-      - traefik.http.routers.shnexpress.rule=Host(``)
+      - traefik.http.routers.shnexpress.rule=Host(`atofinal.online`)
       - traefik.http.routers.shnexpress.entrypoints=websecure
       - traefik.http.routers.shnexpress.middlewares=cors-api@docker
       - traefik.http.routers.shnexpress.tls.certresolver=letsencrypt
