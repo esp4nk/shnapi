@@ -1,8 +1,9 @@
 {
-  "name": "nodeproject",
+  "name": "nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "module": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.7",
-    "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "@types/node": "^20.9.1",
+    "ajv": "^8.14.0",
+    "axios": "^1.7.2",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
   }
 }
